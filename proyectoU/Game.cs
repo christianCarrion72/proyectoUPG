@@ -26,7 +26,7 @@ namespace proyectoU
             GL.Enable(EnableCap.DepthTest);
             GL.DepthFunc(DepthFunction.Lequal);
             
-            centro = new Vertice(3, 0, 0);
+            centro = new Vertice(3, 0, 0);//Centro para mover la U de posicion
             
         }
 
