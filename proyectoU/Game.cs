@@ -14,8 +14,8 @@ namespace proyectoU
         public Game(int width, int height, string title) : base(width, height, GraphicsMode.Default, title) { }
 
         float theta = 0f;
-        public Vertice centro;
-        float x, y, z;
+        Objeto obj1;
+        Objeto obj2;
 
         protected override void OnLoad(EventArgs e)
         {
@@ -25,8 +25,8 @@ namespace proyectoU
 
             GL.Enable(EnableCap.DepthTest);
             GL.DepthFunc(DepthFunction.Lequal);
-            
-            centro = new Vertice(3, 0, 0);//Centro para mover la U de posicion
+            obj1 = new Objeto(3, 0, 0,"U.txt");
+            obj2 = new Objeto(-30, 0, 0, "U.txt");
             
         }
 
@@ -61,187 +61,8 @@ namespace proyectoU
             GL.Vertex3(0f, 0f, 30f);
             GL.End();
 
-            GL.Color4(Color4.Blue);
-            //Primer Bloque
-            //Izquierda
-            GL.Begin(BeginMode.Polygon);
-            GL.Vertex3(-3f + centro.X, 24f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(3f + centro.X, 24f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(3f + centro.X, 24f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(-3f + centro.X, 24f + centro.Y, 3f + centro.Z);
-            GL.End();
-            //revisar
-            GL.Begin(BeginMode.Polygon);
-            GL.Vertex3(-3f + centro.X, 0f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(3f + centro.X, 0f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(3f + centro.X, 0f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(-3f + centro.X, 0f + centro.Y, 3f + centro.Z);
-            GL.End();
-
-            GL.Begin(BeginMode.Polygon);
-            GL.Vertex3(3f + centro.X, 24f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(3f + centro.X, 0f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(-3f + centro.X, 0f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(-3f + centro.X, 24f + centro.Y, 3f + centro.Z);
-            GL.End();
-
-            GL.Begin(BeginMode.Polygon);
-            GL.Vertex3(-3f + centro.X, 0f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(-3f + centro.X, 0f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(-3f + centro.X, 24f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(-3f + centro.X, 24f + centro.Y, 3f + centro.Z);
-            GL.End();
-
-            GL.Begin(BeginMode.Polygon);
-            GL.Vertex3(3f + centro.X, 0f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(3f + centro.X, 0f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(3f + centro.X, 24f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(3f + centro.X, 24f + centro.Y, -3f + centro.Z);
-            GL.End();
-
-            GL.Begin(BeginMode.Polygon);
-            GL.Vertex3(3f + centro.X, 24f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(3f + centro.X, 0f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(-3f + centro.X, 0f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(-3f + centro.X, 24f + centro.Y, 3f + centro.Z);
-            GL.End();
-
-            //Segundo bloque
-            //Base
-
-            GL.Begin(BeginMode.Polygon);
-            GL.Vertex3(3f + centro.X, 8f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(18f + centro.X, 8f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(18f + centro.X, 0f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(3f + centro.X, 0f + centro.Y, 3f + centro.Z);
-            GL.End();
-
-            GL.Begin(BeginMode.Polygon);
-            GL.Vertex3(3f + centro.X, 8f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(3f + centro.X, 8f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(18f + centro.X, 8f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(18f + centro.X, 8f + centro.Y, 3f + centro.Z);
-            GL.End();
-
-            GL.Begin(BeginMode.Polygon);
-            GL.Vertex3(3f + centro.X, 0f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(3f + centro.X, 0f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(18f + centro.X, 0f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(18f + centro.X, 0f + centro.Y, 3f + centro.Z);
-            GL.End();
-
-            GL.Begin(BeginMode.Polygon);
-            GL.Vertex3(18f + centro.X, 8f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(18f + centro.X, 8f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(18f + centro.X, 0f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(18f + centro.X, 0f + centro.Y, 3f + centro.Z);
-            GL.End();
-
-            GL.Begin(BeginMode.Polygon);
-            GL.Vertex3(3f + centro.X, 8f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(3f + centro.X, 8f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(3f + centro.X, 0f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(3f + centro.X, 0f + centro.Y, 3f + centro.Z);
-            GL.End();
-
-            GL.Begin(BeginMode.Polygon);
-            GL.Vertex3(3f + centro.X, 8f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(18f + centro.X, 8f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(18f + centro.X, 0f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(3f + centro.X, 0f + centro.Y, -3f + centro.Z);
-            GL.End();
-
-            //Tercer bloque
-            //Derecha
-
-            GL.Begin(BeginMode.Polygon);
-            GL.Vertex3(18f + centro.X, 24f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(24f + centro.X, 24f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(24f + centro.X, 24f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(18f + centro.X, 24f + centro.Y, 3f + centro.Z);
-            GL.End();
-
-            GL.Begin(BeginMode.Polygon);
-            GL.Vertex3(18f + centro.X, 0f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(24f + centro.X, 0f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(24f + centro.X, 0f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(18f + centro.X, 0f + centro.Y, 3f + centro.Z);
-            GL.End();
-
-            GL.Begin(BeginMode.Polygon);
-            GL.Vertex3(24f + centro.X, 24f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(24f + centro.X, 0f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(18f + centro.X, 0f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(18f + centro.X, 24f + centro.Y, 3f + centro.Z);
-            GL.End();
-
-            GL.Begin(BeginMode.Polygon);
-            GL.Vertex3(18f + centro.X, 0f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(18f + centro.X, 0f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(18f + centro.X, 24f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(18f + centro.X, 24f + centro.Y, 3f + centro.Z);
-            GL.End();
-
-            GL.Begin(BeginMode.Polygon);
-            GL.Vertex3(24f + centro.X, 0f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(24f + centro.X, 0f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(24f + centro.X, 24f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(24f + centro.X, 24f + centro.Y, -3f + centro.Z);
-            GL.End();
-
-            GL.Begin(BeginMode.Polygon);
-            GL.Vertex3(24f + centro.X, 24f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(24f + centro.X, 0f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(18f + centro.X, 0f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(18f + centro.X, 24f + centro.Y, -3f + centro.Z);
-            GL.End();
-            //----
-
-            GL.Color4(Color4.Black);
-            GL.Begin(BeginMode.LineLoop);
-            GL.Vertex3(-3f + centro.X, 0f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(24f + centro.X, 0f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(24f + centro.X, 0f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(-3f + centro.X, 0f + centro.Y, 3f + centro.Z);
-            GL.End();
-
-            GL.Begin(BeginMode.LineLoop);
-            GL.Vertex3(-3f + centro.X, 0f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(-3f + centro.X, 24f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(3f + centro.X, 24f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(3f + centro.X, 8f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(18f + centro.X, 8f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(18f + centro.X, 24f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(24f + centro.X, 24f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(24f + centro.X, 0f + centro.Y, 3f + centro.Z);
-            GL.End();
-
-            GL.Begin(BeginMode.LineLoop);
-            GL.Vertex3(-3f + centro.X, 0f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(-3f + centro.X, 24f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(3f + centro.X, 24f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(3f + centro.X, 8f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(18f + centro.X, 8f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(18f + centro.X, 24f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(24f + centro.X, 24f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(24f + centro.X, 0f + centro.Y, -3f + centro.Z);
-            GL.End();
-
-            GL.Begin(BeginMode.LineLoop);
-            GL.Vertex3(-3f + centro.X, 24f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(3f + centro.X, 24f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(3f + centro.X, 24f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(-3f + centro.X, 24f + centro.Y, 3f + centro.Z);
-            GL.End();
-
-            GL.Begin(BeginMode.LineLoop);
-            GL.Vertex3(18f + centro.X, 24f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(24f + centro.X, 24f + centro.Y, -3f + centro.Z);
-            GL.Vertex3(24f + centro.X, 24f + centro.Y, 3f + centro.Z);
-            GL.Vertex3(18f + centro.X, 24f + centro.Y, 3f + centro.Z);
-            GL.End();
-
-            
+            obj1.Draw();
+            obj2.Draw();
 
             theta += 1.0f;
             if (theta > 360) theta -= 360;
