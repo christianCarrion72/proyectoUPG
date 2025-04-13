@@ -8,7 +8,7 @@ namespace proyectoU
     {
         static void Main(string[] args)
         {
-            using (Game game = new Game(800, 600, "OpenTK - Hola Mundo 'Relativo'"))
+            using (Game game = new Game(800, 600, "OpenTK - Hola Mundo 'Estructura Básica'"))
             {
                 game.Run(60.0);
             }
