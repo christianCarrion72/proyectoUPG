@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using OpenTK;
 
 namespace proyectoU
 {
@@ -15,6 +13,21 @@ namespace proyectoU
             X = x;
             Y = y;
             Z = z;
+        }
+
+        public Vector4 ToVector4()
+        {
+            return new Vector4(X, Y, Z, 1);
+        }
+
+        public void setValues(Vector4 v)
+        {
+            X = v.X; Y = v.Y; Z = v.Z;
+        }
+
+        public override string ToString()
+        {
+            return "("+X+","+Y+","+Z+")";
         }
     }
 }

@@ -8,18 +8,13 @@ namespace proyectoU
 {
     public class Cara
     {
-        public Color4 color;
-        public List<Vertice> vertices;
+        public Color4 color = Color4.Gray;
+        public List<Vertice> vertices = new List<Vertice>();
 
-        public Cara()
-        {
-            vertices = new List<Vertice>();
-            color = Color4.Gray;
-        }
+        public Cara() { }
 
         public Cara(Color4 color)
         {
-            vertices = new List<Vertice>();
             this.color = color;
         }
 
@@ -30,7 +25,7 @@ namespace proyectoU
 
         public void Draw()
         {
-            GL.Color4(Color4.Black);
+            GL.Color4(Color4.Orange);
             GL.Begin(BeginMode.LineLoop);
             foreach (Vertice v in vertices)
             {
